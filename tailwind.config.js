@@ -83,7 +83,7 @@ module.exports = {
         'black': theme('colors.black'),
         'slate800':theme('colors.slate800'),
         'gray-300': theme('colors.gray.300'),
-        'gray700': theme('colors.gray.700'),
+        'gray-700': theme('colors.gray.700'),
         'cardinales': theme('colors.cardinales'),
         'constlines': theme('colors.constlines'),
       })
