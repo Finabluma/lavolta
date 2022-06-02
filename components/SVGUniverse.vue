@@ -1,6 +1,5 @@
 <template>
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 1366 768"
     preserveAspectRatio="xMidYMin meet"
     id="stelarium"
@@ -245,7 +244,7 @@ export default {
   }
 
   & #cardinales {
-    @apply stroke-cardinales fill-[transparent] dark:stroke-black/20;
+    @apply stroke-cardinales fill-[transparent] dark:stroke-white/20;
   }
 
   & #constelaciones {
@@ -255,9 +254,9 @@ export default {
   }
 
   & #estrellas circle {
-    @apply stroke-black/10 fill-[transparent]
-    dark:stroke-white/10
-    dark:fill-white/20;
+    @apply stroke-gray-300 fill-gray-300
+    dark:stroke-gray-700
+    dark:fill-gray-600;
   }
 
   & #orbitas path {
