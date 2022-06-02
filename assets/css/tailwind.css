@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+
+  body{
+    @apply subpixel-antialiased
+    bg-gray-300
+    text-slate800
+    dark:text-gray-300
+    dark:bg-gray-600;
+
+    & .nav {
+      & .moon{
+        @apply stroke-slate800;
+      }
+
+      & .sun{
+        @apply dark:stroke-gray-300 dark:fill-gray-300;
+      }
+    }
+
+    & .nav.white {
+
+      & span{
+        @apply text-white
+      }
+
+      & svg g{
+        @apply fill-white dark:stroke-gray-300;
+      }
+
+      & .moon{
+        @apply stroke-white;
+      }
+
+      &.scrolled{
+        & span{@apply text-slate800 dark:text-gray-300}
+        & svg g {
+          @apply fill-slate800 dark:fill-gray-300;
+        }
+
+        & .moon{
+          @apply stroke-slate800
+        }
+      }
+    }
+
+    & a {
+      @apply dark:text-gray-300;
+
+      &:hover{
+        @apply text-gray-500 transition-colors dark:text-gray-300
+      }
+
+      &.nuxt-link-exact-active.nuxt-link-active, &.nuxt-link-exact-active.nuxt-link-active:hover{
+        @apply cursor-default text-gray-600 dark:text-gray-400
+      }
+    }
+
+    & h1, & h2{
+      &:after {
+        @apply block
+        w-10
+        h-1
+      bg-slate800
+      dark:bg-gray-300;
+      }
+    }
+
+    & li{
+      &:after {
+        @apply block
+        bg-slate600
+        h-[3px]
+        w-[3px]
+        rounded-md
+        mx-2
+      dark:bg-gray-300;
+      }
+    }
+  }
+}

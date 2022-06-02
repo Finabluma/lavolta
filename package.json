@@ -1,0 +1,34 @@
+{
+  "name": "lavolta",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/vercel-builder": "^0.22.1",
+    "core-js": "^3.19.3",
+    "nuxt": "^2.15.8",
+    "vue": "^2.6.14",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "@nuxt/image": "^0.6.2",
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@nuxtjs/color-mode": "^2.1.1",
+    "@nuxtjs/tailwindcss": "^4.2.1",
+    "graphql-tag": "^2.12.6",
+    "gsap": "npm:@gsap/shockingly@^3.9.1",
+    "mapbox-gl": "^2.8.2",
+    "nuxt-video-player": "^1.0.17",
+    "postcss": "^8.4.8",
+    "tailwindcss-dark-mode": "^1.1.7",
+    "tailwindcss-pseudo-elements": "^2.0.0"
+  }
+}
