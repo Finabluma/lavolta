@@ -130,7 +130,7 @@ export default {
             fill: "black",
             fillOpacity: 0.4,
           },
-          "rings+=0.5"
+          "rings+=0.2"
         )
         .to(
           ring3,
@@ -139,10 +139,10 @@ export default {
             stroke: "white",
             strokeWidth: "5",
             strokeOpacity: 0.2,
-            fillOpacity: 0.6,
+            fillOpacity: 0.9,
             drawSVG: "50% 0",
           },
-          "rings+=0.4"
+          "rings+=0.2"
         )
         .to(
           letters,
@@ -150,7 +150,7 @@ export default {
             y: "+=50",
             fillOpacity: 0.8,
           },
-          "rings+=0.3"
+          "rings+=0.2"
         );
 
       ScrollTrigger.create({
@@ -166,26 +166,6 @@ export default {
         //   indent: "20",
         // },
       });
-    },
-  },
-  transition: {
-    name: "hola",
-    mode: "out-in",
-    appear: true,
-    css: false,
-    beforeEnter(el) {
-      console.log(el, "before-enter-hola");
-    },
-    enter(el, done) {
-      console.log(el, "enter-hola");
-      done();
-    },
-    afterEnter(el) {
-      console.log(el, "after-enter-hola");
-    },
-    leave(el, done) {
-      console.log(el, "leave-hola");
-      done();
     },
   },
   mounted() {
