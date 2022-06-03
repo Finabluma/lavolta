@@ -21,15 +21,11 @@ export default {
   },
 
   // loading: '~/components/AppLoading.vue',
-  loading: {
-    color: 'white',
-    height: '2px',
-    continuous: true
-  },
+  loading: false,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    // '~/assets/css/main.css'
+    '~/assets/css/main.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

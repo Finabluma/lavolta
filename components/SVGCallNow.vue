@@ -1,5 +1,5 @@
 <template>
-  <div class="cta__circle" ref="badge">
+  <div class="cta__circle">
     <a href="tel:+34977651416" aria-label="teléfono reservas">
       <svg id="badge" viewBox="0 0 512 512">
         <g id="rings" ref="ring">
@@ -122,22 +122,29 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
 export default {
+  data: () => ({
+    tlRotate: gsap.timeline({
+      paused: true,
+      defaults: {
+        rotation: "360",
+        repeat: -1,
+        transformOrigin: "center",
+        ease: "none",
+      },
+    }),
+  }),
   methods: {
     badgeSVG() {
       const { letters, ring, bruja } = this.$refs;
 
-      const tlRotate = gsap.timeline({
-        defaults: {
-          repeat: -1,
-          transformOrigin: "center",
-          ease: "none",
-        },
-      });
+      const tl = this.tlRotate;
 
-      tlRotate
-        .to(bruja, { duration: 30, rotation: "360" })
-        .to(letters, {duration: 60,rotation: "360"},"0")
-        .timeScale(0.3);
+      tl.to(bruja, { duration: 60 })
+        .to(letters, { duration: 40 }, "0")
+        .timeScale(0.5);
+    },
+    badgeOn() {
+      this.tlRotate.play();
     },
   },
   mounted() {

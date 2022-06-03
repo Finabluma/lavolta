@@ -12,7 +12,7 @@
               sujetas a las constelaciones :)
             </p>
           </div>
-          <SVGCallNow />
+          <SVGCallNow ref="call" />
         </div>
         <SVGUniverse />
       </div>
@@ -24,7 +24,9 @@
         <section>
           <h2>¿Qué comer?</h2>
           <p>
-            Abre el apetito echando un vistazo a lo que podemos ofrecer. En nuestra cocina encontrarás una gran variedad de productos que esperamos sean de tu agrado. Bienvenid@ a nuestro hogar ;)
+            Abre el apetito echando un vistazo a lo que podemos ofrecer. En
+            nuestra cocina encontrarás una gran variedad de productos que
+            esperamos sean de tu agrado. Bienvenid@ a nuestro hogar ;)
           </p>
           <app-button to="carta" title="La Carta" variant="primary" size="small"
             >la carta</app-button
@@ -46,6 +48,7 @@ import ReservasCondiciones from "~/components/ReservasCondiciones.vue";
 import NodeById from "~/graphql/nodeById";
 import BlockById from "~/graphql/blockById";
 import ParagraphsCondtions from "~/graphql/ParagraphsConditions";
+
 
 export default {
   components: {
@@ -95,6 +98,9 @@ export default {
       },
     },
   },
+  mounted() {
+    this.$refs.call.badgeOn()
+  }
 };
 </script>
 
@@ -147,7 +153,7 @@ export default {
             lg:text-left;
 
             &:after {
-              lg:ml-0;
+              lg: ml-0;
             }
           }
 
@@ -186,7 +192,7 @@ export default {
       }
 
       & p {
-        @apply font-hero font-light text-paragraph mb-5 text-center ;
+        @apply font-hero font-light text-paragraph mb-5 text-center;
       }
     }
   }
