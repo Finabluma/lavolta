@@ -29,7 +29,6 @@
 
 <script>
 import AppHeader from "~/components/AppHeader.vue";
-import AppIconHome from "~/components/AppIconHome.vue";
 import SVGMarieta from "~/components/SVGMarieta.vue";
 import PrensaTeaser from "~/components/PrensaTeaser.vue";
 import AppFooter from "~/components/AppFooter.vue";
@@ -41,7 +40,6 @@ export default {
   components: {
     PrensaTeaser,
     AppHeader,
-    AppIconHome,
     SVGMarieta,
     AppFooter,
     AppButton,

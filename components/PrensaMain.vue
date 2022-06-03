@@ -42,11 +42,6 @@
 </template>
 
 <script>
-import AppIconHome from "./AppIconHome.vue";
-import AppPause from "./AppPause.vue";
-import AppPlay from "./AppPlay.vue";
-import AppReset from "./AppReset.vue";
-import AppStop from "./AppStop.vue";
 import VideoPlayer from "nuxt-video-player";
 
 var moment = require("moment");
@@ -57,11 +52,6 @@ export default {
     moment: moment,
   }),
   components: {
-    AppPlay,
-    AppPause,
-    AppStop,
-    AppReset,
-    AppIconHome,
     VideoPlayer,
   },
 };
