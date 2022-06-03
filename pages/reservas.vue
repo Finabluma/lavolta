@@ -54,7 +54,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default {
   data: () => ({
-    tlCall: gsap.timeline({}),
+    tlCall: gsap.timeline({
+      defaults: {
+        duration: 0.5,
+      },
+    }),
   }),
   components: {
     AppFooter,
@@ -116,33 +120,34 @@ export default {
       tlScroll
         .add("rings")
         .to(ring1, {
-          y: "+=20",
-          autoAlpha: 0.1,
+          y: "+=30",
+          autoAlpha: 0.2,
         })
         .to(
           ring2,
           {
-            y: "-=40",
-            autoAlpha: 0.2,
+            y: "+=40",
+            fill: "black",
+            fillOpacity: 0.4,
           },
           "rings+=0.5"
         )
         .to(
           ring3,
           {
-            y: "+=55",
+            y: "+=50",
             stroke: "white",
             strokeWidth: "5",
             strokeOpacity: 0.2,
-            fillOpacity: 0.4,
+            fillOpacity: 0.6,
             drawSVG: "50% 0",
           },
-          "rings+=0.3"
+          "rings+=0.4"
         )
         .to(
           letters,
           {
-            y: "+=60",
+            y: "+=50",
             fillOpacity: 0.8,
           },
           "rings+=0.3"
@@ -151,7 +156,7 @@ export default {
       ScrollTrigger.create({
         trigger: ".hero",
         animation: tlScroll,
-        start: "top+=2% top",
+        start: "center center-20%",
         end: "bottom top+=10%",
         scrub: 1,
         // markers: {
