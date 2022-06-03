@@ -5,15 +5,15 @@
         <g id="rings" ref="ring">
           <path
             d="M257.16 50.44C102.34 49.55 4.6 216.59 81.24 351.12c76.64 134.53 270.17 135.65 348.36 2.01 78.19-133.64-17.61-301.8-172.44-302.69ZM371.09 318.9c-51.84 88.6-180.15 87.86-230.96-1.33s13.99-199.94 116.63-199.35c102.65.59 166.16 112.08 114.32 200.68Z"
-            fill="#e6e6e6"
+            fill="#e6e6e6" ref="ring1"
           />
           <path
             d="M257.16 59.31C102.34 58.41 4.6 225.46 81.24 359.99 157.88 494.52 351.41 495.64 429.6 362c78.19-133.64-17.61-301.8-172.44-302.69Zm113.93 268.46c-51.84 88.6-180.15 87.86-230.96-1.33s13.99-199.94 116.63-199.35c102.65.59 166.16 112.08 114.32 200.68Z"
-            fill="#193540"
+            fill="#193540" ref="ring2"
           />
           <path
             d="M257.16 54.88C102.34 53.98 4.6 221.03 81.24 355.56c76.64 134.53 270.17 135.65 348.36 2.01 78.19-133.64-17.61-301.8-172.44-302.69Zm113.93 268.46c-51.84 88.6-180.15 87.86-230.96-1.33s13.99-199.94 116.63-199.35c102.65.59 166.16 112.08 114.32 200.68Z"
-            fill="#899eaa"
+            fill="#899eaa" ref="ring3"
           />
         </g>
 
@@ -119,8 +119,6 @@
 
 <script>
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
 export default {
   data: () => ({
     tlRotate: gsap.timeline({
@@ -131,11 +129,11 @@ export default {
         transformOrigin: "center",
         ease: "none",
       },
-    }),
+    })
   }),
   methods: {
     badgeSVG() {
-      const { letters, ring, bruja } = this.$refs;
+      const { letters, bruja } = this.$refs;
 
       const tl = this.tlRotate;
 

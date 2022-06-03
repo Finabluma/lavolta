@@ -49,8 +49,13 @@ import NodeById from "~/graphql/nodeById";
 import BlockById from "~/graphql/blockById";
 import ParagraphsCondtions from "~/graphql/ParagraphsConditions";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default {
+  data: () => ({
+    tlCall: gsap.timeline({}),
+  }),
   components: {
     AppFooter,
     AppHeader,
@@ -98,9 +103,64 @@ export default {
       },
     },
   },
+  methods: {
+    badge() {
+      gsap.registerPlugin(ScrollTrigger);
+      const { letters, ring, bruja, ring1, ring2, ring3 } =
+        this.$refs.call.$refs;
+
+      console.log(this.$refs.call.$refs);
+
+      const tlScroll = this.tlCall;
+
+      tlScroll
+        .add("rings")
+        .to(ring1, {
+          y: "+=50",
+          autoAlpha: 0.1,
+        })
+        .to(
+          ring2,
+          {
+            y: "+=30",
+            autoAlpha: 0.2,
+          },
+          "rings+=0.2"
+        )
+        .to(
+          ring3,
+          {
+            y: "+=20",
+            stroke: "white",
+            strokeWidth: "2",
+            strokeOpacity: 0.2,
+            fillOpacity: 0.3,
+            drawSVG: "50% 0",
+          },
+          "rings+=0.4"
+        )
+        .to(
+          letters,
+          {
+            fillOpacity: 0.6,
+            y: "+=20",
+          },
+          "rings+=0.4"
+        );
+
+      ScrollTrigger.create({
+        trigger: ".content",
+        animation: tlScroll,
+        start: "top top",
+        end: "bottom+=10% top+=40%",
+        scrub: 1,
+      });
+    },
+  },
   mounted() {
-    this.$refs.call.badgeOn()
-  }
+    this.$refs.call.badgeOn();
+    this.badge();
+  },
 };
 </script>
 
