@@ -116,45 +116,71 @@ export default {
       tlScroll
         .add("rings")
         .to(ring1, {
-          y: "+=50",
+          y: "+=20",
           autoAlpha: 0.1,
         })
         .to(
           ring2,
           {
-            y: "+=30",
+            y: "-=40",
             autoAlpha: 0.2,
           },
-          "rings+=0.2"
+          "rings+=0.5"
         )
         .to(
           ring3,
           {
-            y: "+=20",
+            y: "+=55",
             stroke: "white",
-            strokeWidth: "2",
+            strokeWidth: "5",
             strokeOpacity: 0.2,
-            fillOpacity: 0.3,
+            fillOpacity: 0.4,
             drawSVG: "50% 0",
           },
-          "rings+=0.4"
+          "rings+=0.3"
         )
         .to(
           letters,
           {
-            fillOpacity: 0.6,
-            y: "+=20",
+            y: "+=60",
+            fillOpacity: 0.8,
           },
-          "rings+=0.4"
+          "rings+=0.3"
         );
 
       ScrollTrigger.create({
-        trigger: ".content",
+        trigger: ".hero",
         animation: tlScroll,
-        start: "top top",
-        end: "bottom+=10% top+=40%",
+        start: "top+=2% top",
+        end: "bottom top+=10%",
         scrub: 1,
+        // markers: {
+        //   startColor: "white",
+        //   endColor: "white",
+        //   fontSize: "18px",
+        //   indent: "20",
+        // },
       });
+    },
+  },
+  transition: {
+    name: "hola",
+    mode: "out-in",
+    appear: true,
+    css: false,
+    beforeEnter(el) {
+      console.log(el, "before-enter-hola");
+    },
+    enter(el, done) {
+      console.log(el, "enter-hola");
+      done();
+    },
+    afterEnter(el) {
+      console.log(el, "after-enter-hola");
+    },
+    leave(el, done) {
+      console.log(el, "leave-hola");
+      done();
     },
   },
   mounted() {
