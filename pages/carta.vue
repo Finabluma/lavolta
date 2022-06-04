@@ -2,8 +2,8 @@
   <div v-if="!$apollo.loading" id="carta">
     <app-header />
     <main>
-      <div class="hero_carta">
-        <div class="title">
+      <div class="hero" ref="hero">
+        <div class="title" ref="title">
           <h1 class="sr-only">La Carta</h1>
           <SVGCarta />
         </div>
@@ -88,6 +88,8 @@ import BebidasCarta from "~/graphql/cartaBebidasQuery";
 import NodeById from "~/graphql/nodeById";
 import PrensaTeasers from "~/graphql/prensaTeaserQuery";
 
+import { typeB } from "~/mixins/transitions";
+
 export default {
   name: "Home",
   components: {
@@ -97,6 +99,7 @@ export default {
     AppHeader,
     AppAside,
   },
+  mixins: [typeB],
   apollo: {
     $loadingKey: "loading",
     node: {
@@ -291,7 +294,7 @@ export default {
 <style lang="postcss">
 #carta {
   @apply bg-gray-300 dark:bg-gray-700;
-  & .hero_carta {
+  & .hero {
     @apply relative
     w-screen
     h-[30vh]

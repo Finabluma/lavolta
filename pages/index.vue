@@ -2,8 +2,8 @@
   <div v-if="!$apollo.loading" id="home">
     <app-header />
     <main>
-      <div class="hero_carta">
-        <div class="title">
+      <div class="hero" ref="hero">
+        <div class="title" ref="title">
           <h1 class="sr-only">La Carta</h1>
           <SVGCarta />
         </div>
@@ -87,6 +87,9 @@ import PlatosCarta from "~/graphql/cartaPlatosQuery";
 import BebidasCarta from "~/graphql/cartaBebidasQuery";
 import NodeById from "~/graphql/nodeById";
 import PrensaTeasers from "~/graphql/prensaTeaserQuery";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default {
   name: "Home",
@@ -291,7 +294,7 @@ export default {
 <style lang="postcss">
 #home {
   @apply bg-gray-300 dark:bg-gray-700;
-  & .hero_carta {
+  & .hero {
     @apply relative
     w-screen
     h-[30vh]
@@ -360,7 +363,7 @@ export default {
         xl:text-8xl;
 
       &:after {
-        lg:ml-0;
+        lg: ml-0;
       }
     }
 
