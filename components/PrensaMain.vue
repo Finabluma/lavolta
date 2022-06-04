@@ -61,13 +61,15 @@ export default {
 section {
   @apply relative
   z-30
+  bg-gray-300
   w-10/12
   mx-auto
   pb-20
   md:w-10/12
   lg:w-8/12
   xl:w-7/12
-  2xl:w-6/12;
+  2xl:w-6/12
+  dark:bg-gray-700;
 
   & .enlaces {
     @apply py-3
