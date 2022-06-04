@@ -73,6 +73,7 @@ module.exports = {
         'black': theme('colors.black'),
         'slate800':theme('colors.slate800'),
         'gray-300': theme('colors.gray.300'),
+        'gray-400': theme('colors.gray.400'),
         'gray-600': theme('colors.gray.600'),
         'constlines': theme('colors.constlines'),
         'orbit': theme('colors.orbit'),
