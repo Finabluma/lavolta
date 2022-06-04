@@ -24,15 +24,15 @@
     & .nav.white {
 
       & span{
-        @apply text-white
+        @apply text-gray-300
       }
 
       & svg g{
-        @apply fill-white dark:stroke-gray-300;
+        @apply fill-gray-300 dark:stroke-gray-300;
       }
 
       & .moon{
-        @apply stroke-white;
+        @apply stroke-gray-300;
       }
 
       &.scrolled{

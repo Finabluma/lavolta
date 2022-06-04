@@ -240,7 +240,7 @@ export default {
   lg:max-w-[90vw];
 
   & #grid path{
-    @apply stroke-black/10 fill-[transparent] dark:stroke-black/20
+    @apply stroke-black/10 fill-[transparent] dark:stroke-white/10
   }
 
   & #cardinales {
