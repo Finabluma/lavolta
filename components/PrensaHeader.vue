@@ -1,11 +1,11 @@
 <template>
-  <div class="hero-post">
-    <div class="inner-hero">
+  <div class="hero-post" ref="hero">
+    <div class="inner-hero" ref="inner">
       <div class="info-hero">
-        <h1 itemprop="headline">
+        <h1 itemprop="headline" ref="headline">
           {{ item.title }}
         </h1>
-        <div class="meta-info">
+        <div class="meta-info" ref="meta">
           <ul>
             <li>
               <span
@@ -38,17 +38,39 @@
 </template>
 
 <script>
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 var moment = require("moment");
 export default {
   props: ["item"],
   data: () => ({
     moment: moment,
+    heroScroll: gsap.timeline({ paused: true }),
   }),
   methods: {
+    hero() {
+      const { hero, inner, headline, meta } = this.$refs;
+
+      const tl = this.heroScroll;
+
+      tl.to([headline, meta], {
+        yPercent: "+=80",
+        autoAlpha: 0,
+        stagger: 0.2,
+      });
+
+      ScrollTrigger.create({
+        trigger: hero,
+        animation: tl,
+        start: "top top",
+        pin: inner,
+        pinSpacing: false,
+        scrub:1
+      });
+    },
   },
   mounted() {
+    this.hero();
   },
 };
 </script>
