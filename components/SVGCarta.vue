@@ -57,6 +57,7 @@ export default {
 
       tl.to(carta, {
         yPercent: "+=10",
+        strokeOpacity:0.3,
         fillOpacity: 0.1,
       }).to(
         trazado,
