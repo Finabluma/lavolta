@@ -88,8 +88,6 @@ import BebidasCarta from "~/graphql/cartaBebidasQuery";
 import NodeById from "~/graphql/nodeById";
 import PrensaTeasers from "~/graphql/prensaTeaserQuery";
 
-import { typeB } from "~/mixins/transitions";
-
 export default {
   name: "Home",
   components: {
@@ -99,7 +97,6 @@ export default {
     AppHeader,
     AppAside,
   },
-  mixins: [typeB],
   apollo: {
     $loadingKey: "loading",
     node: {

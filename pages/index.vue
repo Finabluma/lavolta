@@ -297,7 +297,7 @@ export default {
   & .hero {
     @apply relative
     w-screen
-    h-[30vh]
+    h-[25vh]
     bg-azulejos
     bg-cover
     content-after
