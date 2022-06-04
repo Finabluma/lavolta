@@ -2,7 +2,7 @@
   <div v-if="!$apollo.loading" id="reservas">
     <app-header />
     <main>
-      <div class="hero">
+      <div class="hero" ref="hero">
         <div class="content">
           <div class="content-inner">
             <h1>{{ node.title }}</h1>
@@ -12,7 +12,7 @@
               sujetas a las constelaciones :)
             </p>
           </div>
-          <SVGCallNow ref="call" />
+          <SVGCallNow />
         </div>
         <SVGUniverse />
       </div>
@@ -49,17 +49,7 @@ import NodeById from "~/graphql/nodeById";
 import BlockById from "~/graphql/blockById";
 import ParagraphsCondtions from "~/graphql/ParagraphsConditions";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
 export default {
-  data: () => ({
-    tlCall: gsap.timeline({
-      defaults: {
-        duration: 0.5,
-      },
-    }),
-  }),
   components: {
     AppFooter,
     AppHeader,
@@ -107,70 +97,28 @@ export default {
       },
     },
   },
-  methods: {
-    badge() {
-      gsap.registerPlugin(ScrollTrigger);
-      const { letters, ring, bruja, ring1, ring2, ring3 } =
-        this.$refs.call.$refs;
-
-      console.log(this.$refs.call.$refs);
-
-      const tlScroll = this.tlCall;
-
-      tlScroll
-        .add("rings")
-        .to(ring1, {
-          y: "+=30",
-          autoAlpha: 0.2,
-        })
-        .to(
-          ring2,
-          {
-            y: "+=40",
-            fill: "black",
-            fillOpacity: 0.4,
-          },
-          "rings+=0.2"
-        )
-        .to(
-          ring3,
-          {
-            y: "+=50",
-            stroke: "white",
-            strokeWidth: "5",
-            strokeOpacity: 0.2,
-            fillOpacity: 0.9,
-            drawSVG: "50% 0",
-          },
-          "rings+=0.2"
-        )
-        .to(
-          letters,
-          {
-            y: "+=50",
-            fillOpacity: 0.8,
-          },
-          "rings+=0.2"
-        );
-
-      ScrollTrigger.create({
-        trigger: ".hero",
-        animation: tlScroll,
-        start: "center center-20%",
-        end: "bottom top+=10%",
-        scrub: 1,
-        // markers: {
-        //   startColor: "white",
-        //   endColor: "white",
-        //   fontSize: "18px",
-        //   indent: "20",
-        // },
-      });
+  transition: {
+    /* TODO */
+    name: "reservas",
+    appear: true,
+    css: false,
+    beforeEnter(el) {
+      console.log(el, "before-enter");
     },
-  },
-  mounted() {
-    this.$refs.call.badgeOn();
-    this.badge();
+    enter(el, done) {
+      console.log(el, "enter");
+      done();
+    },
+    afterEnter(el) {
+      console.log(el, "after-enter");
+    },
+    leave(el, done) {
+      console.log(el, "leave");
+      done();
+    },
+    onAfterLeave(el) {
+      console.log(el, "after-leave");
+    },
   },
 };
 </script>
