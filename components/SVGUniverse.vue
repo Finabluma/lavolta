@@ -302,7 +302,7 @@ export default {
   z-10
   w-auto
   md:w-auto
-  lg:max-w-[90vw];
+  lg:max-w-[97vw];
 
   & #grid path {
     @apply stroke-black/10 fill-[transparent] dark:stroke-white/10;
