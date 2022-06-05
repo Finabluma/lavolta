@@ -28,11 +28,6 @@ import AppBurguer from "./AppBurguer.vue";
 import AppLogo from "./AppLogo.vue";
 
 export default {
-  props: {
-    layout: {
-      type: String,
-    },
-  },
   data: () => ({
     tl: gsap.timeline({
       paused: true,
@@ -199,13 +194,4 @@ export default {
     }
   }
 }
-
-/* .white{
-  @apply backdrop-blur-sm
-   bg-[#50929f]/60
-  bg-white
-  ring-4
-  ring-white/80
-  ;
-} */
 </style>

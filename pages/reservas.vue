@@ -49,6 +49,7 @@ import NodeById from "~/graphql/nodeById";
 import BlockById from "~/graphql/blockById";
 import ParagraphsCondtions from "~/graphql/ParagraphsConditions";
 
+
 export default {
   components: {
     AppFooter,
@@ -95,29 +96,6 @@ export default {
       update(data) {
         return data.blockContentById;
       },
-    },
-  },
-  transition: {
-    /* TODO */
-    name: "reservas",
-    appear: true,
-    css: false,
-    beforeEnter(el) {
-      console.log(el, "before-enter");
-    },
-    enter(el, done) {
-      console.log(el, "enter");
-      done();
-    },
-    afterEnter(el) {
-      console.log(el, "after-enter");
-    },
-    leave(el, done) {
-      console.log(el, "leave");
-      done();
-    },
-    onAfterLeave(el) {
-      console.log(el, "after-leave");
     },
   },
 };
