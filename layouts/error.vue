@@ -2,10 +2,18 @@
   <div id="error">
     <main>
       <div class="content">
-        <h1 class="text-8xl">
-          {{ error.statusCode }}
-        </h1>
-        <small># hay algo que no fue bien #</small>
+        <div v-if="error.statusCode === 404">
+          <h1>
+            {{ error.statusCode }}
+          </h1>
+          <span># página no encontrada #</span>
+        </div>
+        <div v-else>
+          <h1 class="text-8xl">
+            {{ error.statusCode }}
+          </h1>
+          <span># hay algo que no fue bien #</span>
+        </div>
       </div>
       <aside>
         <p>Vuelve al <NuxtLink to="/">¿página principal?</NuxtLink></p>
@@ -37,21 +45,33 @@ export default {
     mx-auto
     pt-12
     flex
-    justify-center
     items-center
     flex-col
     md:w-10/12
     md:pt-10
     lg:w-8/12
     xl:w-7/12
-    xl:pt-48;
+    xl:pt-20;
+
+    & div {
+      @apply mb-10 text-center;
+      & h1 {
+        @apply text-[10rem]
+        font-dejanire
+        mb-0;
+      }
+
+      & span {
+        @apply text-base;
+      }
+    }
 
     & aside {
       & p {
         @apply flex;
 
         & a {
-          @apply ml-2
+          @apply ml-1
           block
           content-after;
 
