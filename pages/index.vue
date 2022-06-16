@@ -54,22 +54,25 @@
           </section>
         </div>
         <app-aside layout="green">
-          <h2 class="sr-only">Y mientras esperas ...</h2>
+          <template slot="header">
+            <h2 class="sr-only">Y mientras esperas ...</h2>
+          </template>
           <prensa-teaser
             :teasers="teasers"
             title="Prensa"
             subtitle="así vemos las cosas"
             size="xs:32px"
             layout="aside"
-          >
-          </prensa-teaser>
-          <app-button
-            to="prensa"
-            title="Articulos de Prensa"
-            variant="primary"
-            size="small"
-            >Más articulos</app-button
-          >
+          ></prensa-teaser>
+          <template slot="footer">
+            <app-button
+              to="prensa"
+              title="Articulos de Prensa"
+              variant="primary"
+              size="small"
+              >Más articulos</app-button
+            >
+          </template>
         </app-aside>
       </div>
     </main>
@@ -78,27 +81,16 @@
 </template>
 
 <script>
-import CartaRestaurante from "~/components/CartaRestaurante.vue";
 import SVGCarta from "~/components/SVGCarta.vue";
-import AppFooter from "~/components/AppFooter.vue";
-import AppHeader from "~/components/AppHeader.vue";
-import AppAside from "~/components/AppAside.vue";
 import PlatosCarta from "~/graphql/cartaPlatosQuery";
 import BebidasCarta from "~/graphql/cartaBebidasQuery";
 import NodeById from "~/graphql/nodeById";
 import PrensaTeasers from "~/graphql/prensaTeaserQuery";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
 export default {
   name: "Home",
   components: {
-    CartaRestaurante,
     SVGCarta,
-    AppFooter,
-    AppHeader,
-    AppAside,
   },
   apollo: {
     $loadingKey: "loading",
@@ -348,7 +340,8 @@ export default {
   & .carta {
     @apply w-11/12
     mx-auto
-    pt-6
+    mt-6
+    mb-12
     md:w-10/12
     lg:w-8/12
     xl:w-7/12;

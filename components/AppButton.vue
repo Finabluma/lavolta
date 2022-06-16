@@ -17,43 +17,43 @@ export default {
     },
     rounded: {
       type: String,
-      default: 'medium',
+      default: "medium",
     },
     size: {
       type: String,
-      default: 'normal',
+      default: "normal",
     },
     variant: {
       type: String,
-      default: 'primary',
+      default: "primary",
     },
   },
   computed: {
     btnClass() {
       return {
         base: true,
-        'rounded-lg': this.rounded === 'medium',
-        'rounded-full': this.rounded === 'large',
+        "rounded-lg": this.rounded === "medium",
+        "rounded-full": this.rounded === "large",
 
-        normal: this.size == 'normal',
-        small: this.size == 'small',
-        large: this.size == 'large',
-      }
+        normal: this.size == "normal",
+        small: this.size == "small",
+        large: this.size == "large",
+      };
     },
     colorVariants() {
       switch (this.variant) {
-        case 'primary':
-          return 'primary'
-        case 'secondary':
-          return 'secondary'
-        case 'danger':
-          return 'border-red-300 bg-red-300 text-white'
+        case "primary":
+          return "primary";
+        case "secondary":
+          return "secondary";
+        case "danger":
+          return "border-red-300 bg-red-300 text-white";
         default:
-          break
+          break;
       }
     },
   },
-}
+};
 </script>
 
 <style lang="postcss" scoped>
@@ -64,11 +64,12 @@ export default {
   font-ibm
   tracking-wide
   capitalize
-  w-6/12
+  w-7/12
   mx-auto
   mt-3
   mb-12
   sm:w-4/12
+  md:w-3/12
   xl:w-3/12;
 }
 .small {

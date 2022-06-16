@@ -78,11 +78,7 @@
 </template>
 
 <script>
-import CartaRestaurante from "~/components/CartaRestaurante.vue";
 import SVGCarta from "~/components/SVGCarta.vue";
-import AppFooter from "~/components/AppFooter.vue";
-import AppHeader from "~/components/AppHeader.vue";
-import AppAside from "~/components/AppAside.vue";
 import PlatosCarta from "~/graphql/cartaPlatosQuery";
 import BebidasCarta from "~/graphql/cartaBebidasQuery";
 import NodeById from "~/graphql/nodeById";
@@ -91,11 +87,7 @@ import PrensaTeasers from "~/graphql/prensaTeaserQuery";
 export default {
   name: "Home",
   components: {
-    CartaRestaurante,
     SVGCarta,
-    AppFooter,
-    AppHeader,
-    AppAside,
   },
   apollo: {
     $loadingKey: "loading",

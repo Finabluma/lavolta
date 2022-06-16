@@ -1,7 +1,9 @@
 <template>
   <aside :class="bg">
     <div class="inner">
+      <slot name="header" />
       <slot />
+      <slot name="footer" />
     </div>
   </aside>
 </template>
@@ -16,7 +18,7 @@ export default {
   computed: {
     bg() {
       return {
-        green: this.layout === 'green',
+        green: this.layout === "green",
         gray: this.layout === "gray",
       };
     },
@@ -67,14 +69,13 @@ aside {
   dark:via-gray-600
   dark:to-gray-700;
 
-  & .inner{
+  & .inner {
     @apply w-full px-0;
   }
 
   & .inner:before,
   & .inner:after {
-    @apply
-    bg-white/90
+    @apply bg-white/90
     max-w-[200px]
     mx-auto
     md:ml-8
@@ -85,15 +86,15 @@ aside {
   }
 }
 
-.green{
+.green {
   @apply bg-gradient-radial
   from-white/70
-  dark:from-gray-600
-  dark:to-gray-700;;
+  dark:from-gray-500
+  dark:to-gray-700;
 
   & .inner:before,
   & .inner:after {
-    @apply bg-white/80 dark:bg-gray-500
+    @apply bg-white/80 dark:bg-gray-500;
   }
 }
 </style>
